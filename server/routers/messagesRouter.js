@@ -23,6 +23,7 @@ router.post("/messages", async (req, res) => {
 
 router.get("/messages", async (req, res) => {
     try {
+        console.log("Fire");
         const messages = await Message.find({})
 
         if (messages.length === 0) {

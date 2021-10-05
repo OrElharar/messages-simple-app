@@ -1,4 +1,4 @@
-const DB_URL = process.env.REACT_APP_PORT;
+const DB_URL = "http://ec2-52-209-4-62.eu-west-1.compute.amazonaws.com";
 
 export const getMessagesFromDB = async () => {
     try {
@@ -19,7 +19,7 @@ export const getMessagesFromDB = async () => {
 
 export const postMessageOnDB = async (reqBody) => {
     try {
-        const url = process.env.REACT_APP_PORT + "/messages"
+        const url = DB_URL + "/messages"
         const res = await fetch(url, {
             method: "POST",
             headers: {
